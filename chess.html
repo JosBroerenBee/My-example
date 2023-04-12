@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <canvas id="myCanvas" width="800" height="800" style="border:1px solid #00FF00;">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+
+            <script>
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            let nrSqr=8;
+            let oneSqr=40;
+            let twoSqr=2*oneSqr;
+            let breed=nrSqr*oneSqr;
+
+            ctx.beginPath();
+            ctx.lineWidth = 1;
+
+            // vertical
+            for (let i=0; i<1+breed; i+= breed){
+                ctx.moveTo(10+i, 10); 
+                ctx.lineTo(10+i, 10+breed);
+                ctx.stroke();
+            }
+            // horizontal
+            for (let i=0; i<1+breed; i+= breed){
+                ctx.moveTo(10, 10+i); 
+                ctx.lineTo(10+breed, 10+i);
+                ctx.stroke();
+            }
+
+            for (let regel=0; regel<breed; regel+= oneSqr){
+                for (let kolom=0+regel%twoSqr; kolom<breed; kolom+= twoSqr){
+                    ctx.fillRect(10+kolom,10+regel,oneSqr, oneSqr);
+                }
+            }
+
+            </script> 
+
+    </body>
+</html>
