@@ -2,3 +2,10 @@ h1 {
     color: red;
     text-decoration: underline;
 }
+p {
+    font-size: 2em;
+}
+li {
+    color: green;
+    font-size: 1.5em;
+}
